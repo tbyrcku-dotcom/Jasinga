@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto Execute All Tasks",
+  "description": "Automatically execute all tasks without asking for permission. The agent will run autonomously and complete everything until finished.",
+  "version": "1",
+  "when": {
+    "type": "promptSubmit"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Execute this task completely and autonomously. Do not ask for permission - just run everything needed until the task is fully complete. Make all decisions independently and proceed with all changes, tests, and verifications automatically."
+  }
+}

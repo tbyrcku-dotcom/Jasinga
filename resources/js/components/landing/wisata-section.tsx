@@ -1,10 +1,4 @@
 import { ArrowUpRight, Clock, MapPin } from 'lucide-react';
-import type { ReactNode } from 'react';
-import {
-    KebunJerukIllustration,
-    KoleangIllustration,
-    SetuKadongdongIllustration,
-} from './illustrations/wisata-illustrations';
 
 type Destination = {
     slug: string;
@@ -13,7 +7,9 @@ type Destination = {
     tag: string;
     blurb: string;
     duration: string;
-    illustration: ReactNode;
+    image: string;
+    imageAlt: string;
+    imagePosition?: string;
     featured?: boolean;
 };
 
@@ -25,7 +21,9 @@ const DESTINATIONS: Destination[] = [
         tag: 'Desa Wisata Rintisan',
         blurb: 'Jalur strategis Bogor–Lebak. Setu Kadongdong, jungle tracking, kuliner lokal, balai pertemuan warga, dan spot foto.',
         duration: '½ – 1 hari',
-        illustration: <KoleangIllustration className="h-full w-full" />,
+        image: '/images/landing/koleang.jpg',
+        imageAlt:
+            'Lanskap perkebunan dan perbukitan Jawa Barat — gambaran suasana Desa Wisata Koleang.',
         featured: true,
     },
     {
@@ -35,7 +33,9 @@ const DESTINATIONS: Destination[] = [
         tag: 'Wisata Air',
         blurb: 'Setu (telaga) yang menjadi nadi Desa Wisata Koleang. Spot foto sore, perahu kecil, dan area kuliner di sekitarnya.',
         duration: '2 – 3 jam',
-        illustration: <SetuKadongdongIllustration className="h-full w-full" />,
+        image: '/images/landing/setu.jpg',
+        imageAlt:
+            'Permukaan danau yang tenang dikelilingi pepohonan hijau — gambaran Setu Kadongdong.',
     },
     {
         slug: 'kebun-jeruk-jasinga',
@@ -44,7 +44,10 @@ const DESTINATIONS: Destination[] = [
         tag: 'Agrowisata',
         blurb: 'Hamparan kebun jeruk yang membuka pengalaman petik buah, edukasi pertanian, dan oleh-oleh segar khas Jasinga.',
         duration: '2 – 4 jam',
-        illustration: <KebunJerukIllustration className="h-full w-full" />,
+        image: '/images/landing/kebun-jeruk.jpg',
+        imageAlt:
+            'Buah jeruk matang menggantung di dahan — gambaran kebun jeruk Jasinga.',
+        imagePosition: 'object-[center_30%]',
     },
 ];
 
@@ -110,7 +113,23 @@ function DestinationCard({
                     large ? 'aspect-[16/10]' : 'aspect-[16/9]'
                 }`}
             >
-                {destination.illustration}
+                <img
+                    src={destination.image}
+                    alt={destination.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className={`h-full w-full object-cover transition duration-500 group-hover:scale-[1.03] ${
+                        destination.imagePosition ?? ''
+                    }`}
+                />
+                <div
+                    aria-hidden="true"
+                    className="absolute inset-0"
+                    style={{
+                        background:
+                            'linear-gradient(180deg, transparent 50%, oklch(0.22 0.012 70 / 0.35) 100%)',
+                    }}
+                />
                 <div className="absolute top-4 left-4 inline-flex items-center gap-1.5 rounded-full bg-jasinga-charcoal/55 px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-jasinga-ivory uppercase backdrop-blur">
                     {destination.tag}
                 </div>

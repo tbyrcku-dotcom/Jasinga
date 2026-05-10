@@ -1,6 +1,5 @@
 import { ArrowUpRight, Quote } from 'lucide-react';
 import { BatikPattern } from './illustrations/batik-pattern';
-import { GolokTarisiIllustration } from './illustrations/wisata-illustrations';
 
 const HIGHLIGHTS = [
     {
@@ -75,9 +74,27 @@ export function BudayaSection() {
                     </div>
 
                     <div className="lg:col-span-7">
-                        <div className="overflow-hidden rounded-3xl border border-jasinga-ivory/10 bg-jasinga-charcoal/40">
-                            <GolokTarisiIllustration className="aspect-[4/3] w-full" />
-                        </div>
+                        <figure className="relative overflow-hidden rounded-3xl border border-jasinga-ivory/10 bg-jasinga-charcoal/40">
+                            <img
+                                src="/images/landing/golok-tarisi.jpg"
+                                alt="Pandai besi sedang menempa logam panas di atas landasan — gambaran tradisi Golok Tarisi."
+                                loading="lazy"
+                                decoding="async"
+                                className="aspect-[4/3] w-full object-cover"
+                            />
+                            <div
+                                aria-hidden="true"
+                                className="absolute inset-0"
+                                style={{
+                                    background:
+                                        'linear-gradient(180deg, oklch(0.22 0.012 70 / 0.0) 55%, oklch(0.22 0.012 70 / 0.55) 100%)',
+                                }}
+                            />
+                            <figcaption className="absolute bottom-4 left-4 inline-flex items-center gap-2 rounded-full bg-jasinga-charcoal/55 px-3 py-1 text-[10px] font-semibold tracking-[0.16em] text-jasinga-ivory uppercase backdrop-blur">
+                                <span className="h-1.5 w-1.5 rounded-full bg-jasinga-gold" />
+                                Tradisi Pandai Besi
+                            </figcaption>
+                        </figure>
 
                         <div className="mt-8 grid gap-5 sm:grid-cols-3">
                             {HIGHLIGHTS.map((item, index) => (

@@ -1,6 +1,5 @@
 import { ArrowRight, MapPinned } from 'lucide-react';
 import { BatikPattern } from './illustrations/batik-pattern';
-import { HeroLandscape } from './illustrations/hero-landscape';
 
 const STATS = [
     { value: '16', label: 'Desa' },
@@ -14,15 +13,22 @@ export function HeroSection() {
     return (
         <section className="relative isolate overflow-hidden">
             <div className="absolute inset-0 -z-10">
-                <HeroLandscape className="h-full w-full" />
+                <img
+                    src="/images/landing/hero.jpg"
+                    alt="Hamparan sawah dan perbukitan Bogor Barat saat senja — gambaran lanskap Jasinga."
+                    className="h-full w-full object-cover"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                />
                 <div
                     className="absolute inset-0"
                     style={{
                         background:
-                            'linear-gradient(180deg, oklch(0.97 0.014 85 / 0.55) 0%, oklch(0.97 0.014 85 / 0.2) 35%, oklch(0.32 0.06 152 / 0.55) 100%)',
+                            'linear-gradient(180deg, oklch(0.22 0.012 70 / 0.45) 0%, oklch(0.22 0.012 70 / 0.55) 35%, oklch(0.32 0.06 152 / 0.78) 100%)',
                     }}
                 />
-                <BatikPattern className="absolute inset-0 h-full w-full text-jasinga-ivory mix-blend-overlay" />
+                <BatikPattern className="absolute inset-0 h-full w-full text-jasinga-ivory opacity-30 mix-blend-overlay" />
             </div>
 
             <div className="mx-auto flex min-h-[100svh] w-full max-w-7xl flex-col px-5 pt-28 pb-12 sm:px-8 lg:pt-36 lg:pb-20">

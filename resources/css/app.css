@@ -9,9 +9,21 @@
 
 @theme {
     --font-sans:
-        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif,
         'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
+    --font-display: 'Fraunces', ui-serif, Georgia, serif;
+
+    --color-jasinga-forest: oklch(0.32 0.06 152);
+    --color-jasinga-canopy: oklch(0.42 0.09 148);
+    --color-jasinga-moss: oklch(0.55 0.1 142);
+    --color-jasinga-leaf: oklch(0.7 0.14 138);
+    --color-jasinga-gold: oklch(0.78 0.13 80);
+    --color-jasinga-ember: oklch(0.65 0.15 55);
+    --color-jasinga-ivory: oklch(0.975 0.014 85);
+    --color-jasinga-sand: oklch(0.94 0.022 80);
+    --color-jasinga-charcoal: oklch(0.22 0.012 70);
+    --color-jasinga-slate: oklch(0.45 0.015 70);
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
